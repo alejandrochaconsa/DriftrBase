@@ -28,7 +28,7 @@
       [
         "@rnmapbox/maps",
         {
-          "RNMapboxMapsDownloadToken": "ADD_KEY"
+          "RNMapboxMapsDownloadToken": "ADDDOWNLOADKEYHEREMOVETOANENVVARIABLE"
         }
       ],
       "expo-router",
