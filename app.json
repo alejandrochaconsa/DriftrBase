@@ -28,7 +28,7 @@
       [
         "@rnmapbox/maps",
         {
-          "RNMapboxMapsDownloadToken": "ADDKEYHERE"
+          "RNMapboxMapsDownloadToken": "KEYREVOKED"
         }
       ],
       [

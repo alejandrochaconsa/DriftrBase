@@ -2,7 +2,7 @@ import { View, Image, StyleSheet } from 'react-native';
 import React from 'react';
 import Mapbox, {MapView} from "@rnmapbox/maps";
 
-const mapBoxToken = "pk.eyJ1IjoiYWxlamFuZHJvMTU4NSIsImEiOiJjbTl1bWg4Y2UwYjA5MmxvbzEzc3YzcjJlIn0.eNDWthMGgFPS4DOQkHRQhg";
+const mapBoxToken = "KEYREVOKED";
 
 Mapbox.setAccessToken(mapBoxToken);
 
