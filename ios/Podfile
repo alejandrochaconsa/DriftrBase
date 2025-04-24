@@ -13,8 +13,8 @@ install! 'cocoapods',
 
 prepare_react_native_project!
 
-# @generated begin @rnmapbox/maps-rnmapboxmapsimpl - expo prebuild (DO NOT MODIFY) sync-79c9cf91211fbdbe4601112fcb21ca60d6c4a20f
-$RNMapboxMapsDownloadToken = 'RevokedPrevKeyAddNewKeyToEnvironment'
+# @generated begin @rnmapbox/maps-rnmapboxmapsimpl - expo prebuild (DO NOT MODIFY) sync-9eadb44552504fe4fb0f022cfbdea0005b622d0c
+$RNMapboxMapsDownloadToken = 'ADDKEYHERE'
 # @generated end @rnmapbox/maps-rnmapboxmapsimpl
 target 'driftrBase' do
   use_expo_modules!

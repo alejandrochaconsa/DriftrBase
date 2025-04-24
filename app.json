@@ -28,7 +28,13 @@
       [
         "@rnmapbox/maps",
         {
-          "RNMapboxMapsDownloadToken": "RevokedPrevKeyAddNewKeyToEnvironment"
+          "RNMapboxMapsDownloadToken": "ADDKEYHERE"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Show current location on map."
         }
       ],
       "expo-router",
