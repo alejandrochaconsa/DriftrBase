@@ -25,6 +25,12 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsDownloadToken": "ADD_KEY"
+        }
+      ],
       "expo-router",
       [
         "expo-splash-screen",
