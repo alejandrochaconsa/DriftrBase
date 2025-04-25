@@ -1,0 +1,3 @@
+Previously added items added to selected album (1)
+    /Users/alejandrochacon/Documents/Git/driftrBase/assets/images/driftrbase-logo-png copy.png
+

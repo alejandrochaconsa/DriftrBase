@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "driftrBase",
+    "name": "DriftrBase",
     "slug": "driftrBase",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,7 +28,7 @@
       [
         "@rnmapbox/maps",
         {
-          "RNMapboxMapsDownloadToken": "KEYREVOKED"
+          "RNMapboxMapsDownloadToken": "ADDKEY"
         }
       ],
       [
@@ -42,9 +42,8 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "resizeMode": "cover",
+          "backgroundColor": "#FCEFD6"
         }
       ]
     ],
