@@ -1,0 +1,6 @@
+module Pods_DriftrBase {
+  umbrella header "Pods-DriftrBase-umbrella.h"
+
+  export *
+  module * { export * }
+}

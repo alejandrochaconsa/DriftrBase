@@ -1,0 +1,68 @@
+{
+  "name": "rnmapbox-maps",
+  "summary": "React Native Component for Mapbox",
+  "version": "10.1.38",
+  "authors": {
+    "Miklós Fazekas": "mfazekas@szemafor.com (https://github.com/mfazekas/)"
+  },
+  "homepage": "https://github.com/rnmapbox/maps#readme",
+  "source": {
+    "git": "https://github.com/rnmapbox/maps.git"
+  },
+  "license": "MIT",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "header_dir": "rnmapbox_maps",
+  "dependencies": {
+    "MapboxMaps": [
+      "~> 10.19.0"
+    ],
+    "Turf": [],
+    "React-Core": [],
+    "React": []
+  },
+  "swift_versions": "5.0",
+  "default_subspecs": [
+    "DynamicLibrary"
+  ],
+  "subspecs": [
+    {
+      "name": "DynamicLibrary",
+      "source_files": "ios/RNMBX/**/*.{h,m,mm,swift}",
+      "private_header_files": [
+        "ios/RNMBX/RNMBXFabricHelpers.h",
+        "ios/RNMBX/RNMBXFabricPropConvert.h",
+        "ios/RNMBX/rnmapbox_maps-Swift.pre.h"
+      ],
+      "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "HEADER_SEARCH_PATHS": "\"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/Headers/Private/Yoga\"",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++20",
+        "OTHER_CPLUSPLUSFLAGS": "$(inherited) -DRCT_NEW_ARCH_ENABLED=1 -DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32"
+      },
+      "compiler_flags": "-DRCT_NEW_ARCH_ENABLED=1 -DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -DFOLLY_CFG_NO_COROUTINES=1 -DFOLLY_HAVE_CLOCK_GETTIME=1 -Wno-comma -Wno-shorten-64-to-32",
+      "dependencies": {
+        "MapboxMaps": [],
+        "Turf": [],
+        "React-Core": [],
+        "React": [],
+        "RCT-Folly": [],
+        "React-RCTFabric": [],
+        "ReactCodegen": [],
+        "RCTRequired": [],
+        "RCTTypeSafety": [],
+        "ReactCommon/turbomodule/bridging": [],
+        "ReactCommon/turbomodule/core": [],
+        "React-NativeModulesApple": [],
+        "Yoga": [],
+        "React-featureflags": [],
+        "React-ImageManager": [],
+        "React-rendererdebug": [],
+        "DoubleConversion": [],
+        "hermes-engine": []
+      }
+    }
+  ],
+  "swift_version": "5.0"
+}

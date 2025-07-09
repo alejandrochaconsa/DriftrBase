@@ -1,0 +1,79 @@
+-- Enable PostGIS extension for geolocation support
+create extension if not exists postgis;
+
+-- ======================================
+-- USERS TABLE: Supabase uses auth.users
+-- ======================================
+
+-- ======================================
+-- CAMPSITES TABLE
+-- ======================================
+create table public.campsites (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  type text check (type in ('campground', 'wild', 'parking', 'other')) not null,
+  contact_name text,
+  area_code text,
+  phone_number text,
+  website text,
+  rating integer check (rating between 1 and 5),
+  location geography(Point, 4326), -- For geo queries
+  created_by uuid references auth.users(id),
+  updated_by uuid references auth.users(id),
+  created_at timestamp with time zone default current_timestamp,
+  updated_at timestamp with time zone default current_timestamp
+);
+
+-- ======================================
+-- AMENITIES TABLE
+-- ======================================
+create table public.campsite_amenities (
+  id uuid primary key default gen_random_uuid(),
+  campsite_id uuid references public.campsites(id) on delete cascade,
+  amenity_type text not null,
+  available boolean not null,
+  details jsonb, -- e.g., { "potable": true, "speed": "fast" }
+  constraint unique_amenity_per_site unique (campsite_id, amenity_type)
+);
+
+-- ======================================
+-- CHECK-INS TABLE
+-- ======================================
+create table public.check_ins (
+  id uuid primary key default gen_random_uuid(),
+  campsite_id uuid references public.campsites(id) on delete cascade,
+  user_id uuid references auth.users(id) on delete cascade,
+  checked_in_at timestamp with time zone default current_timestamp
+);
+
+-- ======================================
+-- COMMENTS TABLE (one per check-in)
+-- ======================================
+create table public.campsite_comments (
+  id uuid primary key default gen_random_uuid(),
+  check_in_id uuid references public.check_ins(id) on delete cascade,
+  text text not null,
+  created_at timestamp with time zone default current_timestamp,
+  constraint one_comment_per_checkin unique (check_in_id)
+);
+
+-- ======================================
+-- IMAGES TABLE
+-- ======================================
+create table public.campsite_images (
+  id uuid primary key default gen_random_uuid(),
+  campsite_id uuid references public.campsites(id) on delete cascade,
+  image_url text not null, -- Supabase Storage path or public URL
+  uploaded_by uuid references auth.users(id),
+  created_at timestamp with time zone default current_timestamp
+);
+
+-- ======================================
+-- FAVORITES TABLE (many-to-many: user ↔ campsite)
+-- ======================================
+create table public.favorites (
+  user_id uuid references auth.users(id) on delete cascade,
+  campsite_id uuid references public.campsites(id) on delete cascade,
+  favorited_at timestamp with time zone default current_timestamp,
+  primary key (user_id, campsite_id)
+);
