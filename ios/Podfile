@@ -14,7 +14,7 @@ install! 'cocoapods',
 prepare_react_native_project!
 
 # @generated begin @rnmapbox/maps-rnmapboxmapsimpl - expo prebuild (DO NOT MODIFY) sync-2b065f8ec55276ca17812315cf27b35755de194d
-$RNMapboxMapsDownloadToken = 'ADDKEY'
+$RNMapboxMapsDownloadToken = ''
 # @generated end @rnmapbox/maps-rnmapboxmapsimpl
 target 'DriftrBase' do
   use_expo_modules!

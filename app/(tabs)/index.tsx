@@ -5,7 +5,7 @@ import * as Location from 'expo-location';
 import type { LocationObjectCoords } from 'expo-location';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const mapBoxToken = "Add Key";
+const mapBoxToken = "";
 MapboxGL.setAccessToken(mapBoxToken);
 MapboxGL.setTelemetryEnabled(false);
 
@@ -30,7 +30,6 @@ const App = () => {
       }
 
       let location = await Location.getCurrentPositionAsync({});
-      console.log(location.coords);
       setCoords(location.coords);
     };
 
@@ -45,7 +44,6 @@ const App = () => {
 
   const moveToCurrentLocation = () => {
     if (coords) {
-      console.log("Set current location: " + coords.latitude + "," + coords.longitude);
       setCoords(coords); // You can also set the center coordinate directly if needed.
     }
   };
